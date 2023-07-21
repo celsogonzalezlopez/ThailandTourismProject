@@ -1,4 +1,3 @@
-
 -- Seeing the most visited provinces overall as well as how the demographic is split between foreign and thai tourists
 
 SELECT
