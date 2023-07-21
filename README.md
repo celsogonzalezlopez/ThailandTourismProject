@@ -1,2 +1,2 @@
-# Portfolio-Projects
-SQL, Tableau, Excel, and beyond
+# ThailandTourismProject
+SQL project focused on Thailand's tourist industry
