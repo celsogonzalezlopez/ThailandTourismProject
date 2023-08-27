@@ -1,0 +1,11 @@
+SELECT
+  EXTRACT(year from date) year,
+  province,
+  CONCAT(ROUND(AVG(occupancy_rate),2), '%') AS avgOR
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+    regexp_contains(province, r'Bangkok|Phetchaburi|Chonburi|Kanchanaburi|Chiang Mai')
+    and EXTRACT(year from date) BETWEEN 2019 AND 2022
+GROUP BY
+  year,
+  province
