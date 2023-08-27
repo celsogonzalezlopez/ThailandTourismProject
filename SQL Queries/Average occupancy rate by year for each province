@@ -1,0 +1,40 @@
+With yr1 AS (
+SELECT
+  province,
+  AVG(occupancy_rate) AS or1
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  date BETWEEN "2019-1-1" AND "2019-12-1"
+GROUP BY
+  province
+), 
+yr2 AS (
+SELECT
+  province,
+  AVG(occupancy_rate) AS or2
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  date BETWEEN "2020-1-1" AND "2020-12-1"
+GROUP BY
+  province
+),
+yr3 AS (
+SELECT
+  province,
+  AVG(occupancy_rate) AS or3
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  date BETWEEN "2021-1-1" AND "2021-12-1"
+GROUP BY
+  province
+),
+yr4 AS (
+SELECT
+  province,
+  AVG(occupancy_rate) AS or4
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  date BETWEEN "2022-1-1" AND "2022-12-1"
+GROUP BY
+  province
+)
