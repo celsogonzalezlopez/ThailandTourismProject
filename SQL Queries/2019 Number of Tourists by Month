@@ -1,0 +1,12 @@
+SELECT 
+  extract(month from date) month,
+  round(avg(no_tourist_all)) avgtouristall,
+  round(avg(net_profit_foreign))avgtouristFR,
+  round(avg(net_profit_thai)) avgtouristTH 
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE 
+  extract(year from date) = 2019
+GROUP BY 
+  month
+ORDER BY 
+  avgtouristall DESC
