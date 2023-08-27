@@ -1,0 +1,16 @@
+with fr as (
+SELECT
+  extract(year from date) year,
+  net_profit_foreign
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  regexp_contains(province, r'Bangkok|Kanchanaburi|Chonburi|PhetchaburiNakhon Ratchasima')
+),
+th as (
+SELECT
+  extract(year from date) year,
+  net_profit_thai
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE
+  regexp_contains(province, r'Bangkok|Kanchanaburi|Chonburi|Phetchaburi|Nakhon Ratchasima')
+)
