@@ -1,0 +1,15 @@
+SELECT
+  province, 
+  round(avg(no_tourist_foreign))avgtouristFR,
+  round(avg(no_tourist_thai)) avgtouristTH 
+FROM
+  `thailand-project-389204.Thailand_domestic_tourism.TourismData` 
+WHERE 
+  extract(year from date) = 2019 
+GROUP BY 
+  province,
+  region
+HAVING
+  avg(no_tourist_thai) > avg(no_tourist_foreign)
+ORDER BY
+  avgtouristTH DESC
