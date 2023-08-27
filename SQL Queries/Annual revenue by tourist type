@@ -1,0 +1,10 @@
+SELECT
+  year,
+  round(sum(fr.net_profit_foreign),2) sumfr,
+  round(sum(th.net_profit_thai),2) sumth
+FROM fr
+JOIN th USING (year)
+WHERE
+  year between 2019 and 2022
+GROUP BY
+  year
