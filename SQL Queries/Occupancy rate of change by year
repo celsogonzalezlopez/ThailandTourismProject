@@ -38,3 +38,14 @@ WHERE
 GROUP BY
   province
 )
+-- Combine those tables to see the rate of growth/decline in occupancy rate
+
+SELECT
+  yr1.province,
+  ((AVG(yr2.or2) - AVG(yr1.or1))/ AVG(yr1.or1))*100 change19to20,
+  ((AVG(yr3.or3) - AVG(yr2.or2))/ AVG(yr2.or2))*100 change20to21,
+  ((AVG(yr4.or4) - AVG(yr3.or3))/ AVG(yr3.or3))*100 change21to22
+FROM yr1
+JOIN yr2 USING (province) JOIN yr3 USING (province) JOIN yr4 USING (province)
+GROUP BY
+  yr1.province
