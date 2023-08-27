@@ -1,0 +1,9 @@
+SELECT
+  province,
+  round(sum(net_profit_all),2) SumRevenue
+FROM `thailand-project-389204.Thailand_domestic_tourism.TourismData`
+WHERE 
+  extract (year from date) = 2019
+  AND regexp_contains(province, r'Bangkok|Chonburi|Phuket|Chiang Mai|Nakhon Ratchasima')
+GROUP BY
+  province
